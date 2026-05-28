@@ -24,120 +24,113 @@ export default function BaiTapPage() {
         </div>
 
         {/* List */}
-        <div style={{ display: "flex", flexDirection: "column", gap: "0" }}>
+        <div className="assignment-masonry">
           {assignments.map((assignment, index) => (
             <article
               key={assignment.id}
-              style={{
-                borderBottom: "1px solid var(--border)",
-                padding: "3rem 0",
-                display: "grid",
-                gridTemplateColumns: "60px 1fr auto",
-                gap: "2rem",
-                alignItems: "start",
-                transition: "background 0.3s",
-              }}
-              className="assignment-row"
+              className="assignment-card"
             >
-              {/* Number */}
-              <div style={{ fontFamily: "'DM Mono', monospace", fontSize: "1.5rem", fontWeight: 300, color: "var(--border-strong)", lineHeight: 1, paddingTop: "0.3rem" }}>
-                {String(index + 1).padStart(2, "0")}
+              {/* Number + Subject */}
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1.2rem", gap: "1rem" }}>
+                <div style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.9rem", letterSpacing: "0.12em", color: "var(--border-strong)" }}>
+                  {String(index + 1).padStart(2, "0")}
+                </div>
+                <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.62rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--primary)", background: "var(--primary-muted)", padding: "0.25rem 0.7rem", border: "1px solid var(--primary-border)", borderRadius: "var(--radius-sm)" }}>
+                  {assignment.subject}
+                </span>
               </div>
 
-              {/* Content */}
-              <div>
-                {/* Meta */}
-                <div style={{ display: "flex", gap: "1.5rem", marginBottom: "1rem", flexWrap: "wrap" }}>
-                  <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.65rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--primary)", background: "var(--primary-muted)", padding: "0.25rem 0.75rem", border: "1px solid var(--primary-border)" }}>
-                    {assignment.subject}
+              {/* Meta */}
+              <div style={{ display: "flex", gap: "0.7rem", marginBottom: "0.9rem", flexWrap: "wrap" }}>
+                {assignment.tools.slice(0, 3).map((tool) => (
+                  <span key={tool} style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.62rem", letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--text-dim)", background: "var(--surface2)", border: "1px solid var(--border)", padding: "0.2rem 0.55rem", borderRadius: "var(--radius-sm)" }}>
+                    {tool}
                   </span>
-                  {assignment.tools.slice(0, 3).map((tool) => (
-                    <span key={tool} style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.65rem", letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--text-dim)" }}>
-                      {tool}
-                    </span>
-                  ))}
-                  {assignment.tools.length > 3 && (
-                    <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.65rem", color: "var(--border-strong)" }}>
-                      +{assignment.tools.length - 3}
-                    </span>
-                  )}
-                </div>
+                ))}
+                {assignment.tools.length > 3 && (
+                  <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.62rem", color: "var(--border-strong)" }}>
+                    +{assignment.tools.length - 3}
+                  </span>
+                )}
+              </div>
 
-                {/* Title */}
-                <h2 style={{ fontFamily: "'Merriweather', serif", fontSize: "1.6rem", fontWeight: 700, color: "var(--text)", lineHeight: 1.2, marginBottom: "1rem" }}>
-                  {assignment.title}
-                </h2>
+              {/* Title */}
+              <h2 style={{ fontFamily: "'Merriweather', serif", fontSize: "1.35rem", fontWeight: 700, color: "var(--text)", lineHeight: 1.3, marginBottom: "0.9rem" }}>
+                {assignment.title}
+              </h2>
 
-                {/* Summary */}
-                <p style={{ fontFamily: "'Source Sans 3', serif", fontSize: "1rem", color: "var(--text-dim)", lineHeight: 1.7, marginBottom: "1.5rem", maxWidth: "600px" }}>
-                  {assignment.summary}
-                </p>
+              {/* Summary */}
+              <p className="assignment-summary" style={{ fontFamily: "'Source Sans 3', serif", fontSize: "0.98rem", color: "var(--text-dim)", lineHeight: 1.7, marginBottom: "1.2rem" }}>
+                {assignment.summary}
+              </p>
 
-                {/* Sections list */}
-                <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
-                  {assignment.sections.flatMap((section) =>
-                    section.steps?.length
-                      ? section.steps.map((step, stepIndex) => (
+              {/* Sections list */}
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "0.45rem", marginBottom: "1.4rem", minHeight: "4.6rem", alignContent: "flex-start" }}>
+                {assignment.sections.flatMap((section) =>
+                  section.steps?.length
+                    ? section.steps.slice(0, 4).map((step, stepIndex) => (
+                        <span
+                          key={`${section.title}-${stepIndex}`}
+                          style={{
+                            fontFamily: "'DM Mono', monospace",
+                            fontSize: "0.6rem",
+                            letterSpacing: "0.06em",
+                            color: "var(--text-dim)",
+                            background: "var(--surface2)",
+                            padding: "0.25rem 0.6rem",
+                            border: "1px solid var(--border)",
+                            borderRadius: "var(--radius-sm)",
+                          }}
+                        >
+                          {String(stepIndex + 1).padStart(2, "0")}: {step.title}
+                        </span>
+                      ))
+                    : section.title
+                      ? [
                           <span
-                            key={`${section.title}-${stepIndex}`}
+                            key={section.title}
                             style={{
                               fontFamily: "'DM Mono', monospace",
-                              fontSize: "0.65rem",
+                              fontSize: "0.6rem",
                               letterSpacing: "0.06em",
                               color: "var(--text-dim)",
                               background: "var(--surface2)",
-                              padding: "0.3rem 0.75rem",
+                              padding: "0.25rem 0.6rem",
                               border: "1px solid var(--border)",
+                              borderRadius: "var(--radius-sm)",
                             }}
                           >
-                            {String(stepIndex + 1).padStart(2, "0")}: {step.title}
-                          </span>
-                        ))
-                      : section.title
-                        ? [
-                            <span
-                              key={section.title}
-                              style={{
-                                fontFamily: "'DM Mono', monospace",
-                                fontSize: "0.65rem",
-                                letterSpacing: "0.06em",
-                                color: "var(--text-dim)",
-                                background: "var(--surface2)",
-                                padding: "0.3rem 0.75rem",
-                                border: "1px solid var(--border)",
-                              }}
-                            >
-                              {section.title}
-                            </span>,
-                          ]
-                        : []
-                  )}
-                </div>
+                            {section.title}
+                          </span>,
+                        ]
+                      : []
+                )}
               </div>
 
               {/* CTA */}
-              <div style={{ paddingTop: "0.3rem" }}>
+              <div className="assignment-cta-wrap">
                 <Link
                   href={`/bai-tap/${assignment.id}`}
                   style={{
                     fontFamily: "'DM Mono', monospace",
-                    fontSize: "0.72rem",
+                    fontSize: "0.7rem",
                     letterSpacing: "0.1em",
                     textTransform: "uppercase",
                     color: "var(--on-primary)",
                     background: "var(--primary)",
-                    padding: "0.75rem 1.5rem",
+                    padding: "0.7rem 1.2rem",
                     textDecoration: "none",
-                    display: "flex",
+                    display: "inline-flex",
                     alignItems: "center",
                     gap: "0.5rem",
                     whiteSpace: "nowrap",
                     transition: "background 0.2s",
+                    borderRadius: "var(--radius-md)",
                   }}
                   onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "var(--primary-light)"; }}
                   onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "var(--primary)"; }}
                 >
-                  Xem chi tiết + PDF
+                  Xem chi tiết
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                     <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
@@ -149,9 +142,52 @@ export default function BaiTapPage() {
       </div>
 
       <style>{`
+        .assignment-masonry {
+          display: grid;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 1.2rem;
+          align-items: stretch;
+        }
+        .assignment-card {
+          display: flex;
+          flex-direction: column;
+          min-height: 460px;
+          border: 1px solid transparent;
+          border-radius: var(--radius-lg);
+          background:
+            linear-gradient(var(--surface), var(--surface)) padding-box,
+            linear-gradient(145deg, rgba(0, 102, 179, 0.24), rgba(0, 166, 81, 0.2)) border-box;
+          padding: 1.25rem;
+          box-shadow: var(--shadow);
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .assignment-summary {
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          min-height: 5rem;
+        }
+        .assignment-cta-wrap {
+          margin-top: auto;
+          padding-top: 0.4rem;
+        }
+        .assignment-card:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 12px 24px rgba(0, 77, 138, 0.12);
+        }
+        @media (max-width: 1080px) {
+          .assignment-masonry {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+          }
+        }
         @media (max-width: 768px) {
-          .assignment-row { grid-template-columns: 40px 1fr !important; }
-          .assignment-row > :last-child { grid-column: 2; }
+          .assignment-masonry {
+            grid-template-columns: 1fr;
+          }
+          .assignment-card {
+            min-height: auto;
+          }
         }
       `}</style>
     </div>

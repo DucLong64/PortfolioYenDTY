@@ -36,11 +36,11 @@ export default function BaiTapDetailPage({ params }: { params: Promise<{ id: str
         {/* Title block */}
         <div style={{ borderBottom: "1px solid var(--border)", paddingBottom: "2.5rem", marginBottom: "3rem" }}>
           <div style={{ display: "flex", gap: "1rem", marginBottom: "1.2rem", flexWrap: "wrap", alignItems: "center" }}>
-            <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.65rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--primary)", background: "var(--primary-muted)", padding: "0.25rem 0.75rem", border: "1px solid var(--primary-border)" }}>
+            <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.65rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--primary)", background: "var(--primary-muted)", padding: "0.25rem 0.75rem", border: "1px solid var(--primary-border)", borderRadius: "var(--radius-sm)" }}>
               {assignment.subject}
             </span>
             {assignment.tools.map((tool) => (
-              <span key={tool} style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.6rem", letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--text-dim)", background: "var(--surface2)", padding: "0.2rem 0.6rem", border: "1px solid var(--border)" }}>
+              <span key={tool} style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.6rem", letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--text-dim)", background: "var(--surface2)", padding: "0.2rem 0.6rem", border: "1px solid var(--border)", borderRadius: "var(--radius-sm)" }}>
                 {tool}
               </span>
             ))}
@@ -59,7 +59,7 @@ export default function BaiTapDetailPage({ params }: { params: Promise<{ id: str
               href={assignment.driveLink}
               target="_blank"
               rel="noopener noreferrer"
-              style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.72rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--primary)", border: "1px solid var(--primary-border)", padding: "0.75rem 1.5rem", textDecoration: "none", display: "flex", alignItems: "center", gap: "0.6rem", whiteSpace: "nowrap", transition: "all 0.2s", flexShrink: 0 }}
+              style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.72rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--primary)", border: "1px solid var(--primary-border)", padding: "0.75rem 1.5rem", textDecoration: "none", display: "flex", alignItems: "center", gap: "0.6rem", whiteSpace: "nowrap", transition: "all 0.2s", flexShrink: 0, borderRadius: "var(--radius-md)" }}
               onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "var(--primary-muted)"; }}
               onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "transparent"; }}>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -73,7 +73,7 @@ export default function BaiTapDetailPage({ params }: { params: Promise<{ id: str
         </div>
 
         {/* Main content: 2 columns */}
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2px", background: "var(--border)", marginBottom: "4rem", boxShadow: "var(--shadow)" }} className="detail-grid">
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2px", background: "var(--border)", marginBottom: "4rem", boxShadow: "var(--shadow)", borderRadius: "var(--radius-lg)", overflow: "hidden" }} className="detail-grid">
           {/* Column 1: Sections */}
           <div style={{ background: "var(--surface)", padding: "0" }}>
             <div style={{ padding: "1.5rem 2rem", borderBottom: "1px solid var(--border)" }}>
@@ -127,7 +127,7 @@ export default function BaiTapDetailPage({ params }: { params: Promise<{ id: str
                   Không thể tải PDF
                 </span>
                 <a href={assignment.driveLink} target="_blank" rel="noopener noreferrer"
-                  style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.65rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--primary)", textDecoration: "none", border: "1px solid var(--primary-border)", padding: "0.5rem 1rem" }}>
+                  style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.65rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--primary)", textDecoration: "none", border: "1px solid var(--primary-border)", padding: "0.5rem 1rem", borderRadius: "var(--radius-sm)" }}>
                   Mở trên Drive
                 </a>
               </div>
@@ -152,14 +152,14 @@ export default function BaiTapDetailPage({ params }: { params: Promise<{ id: str
             <div style={{ display: "flex", gap: "1rem" }}>
               {prev && (
                 <Link href={`/bai-tap/${prev.id}`}
-                  style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.72rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--text-muted)", border: "1px solid var(--border-strong)", padding: "0.75rem 1.5rem", textDecoration: "none", display: "flex", alignItems: "center", gap: "0.5rem", transition: "all 0.2s" }}
+                  style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.72rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--text-muted)", border: "1px solid var(--border-strong)", padding: "0.75rem 1.5rem", textDecoration: "none", display: "flex", alignItems: "center", gap: "0.5rem", transition: "all 0.2s", borderRadius: "var(--radius-md)" }}
                   onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "var(--primary)"; (e.currentTarget as HTMLElement).style.color = "var(--primary)"; }}
                   onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "var(--border-strong)"; (e.currentTarget as HTMLElement).style.color = "var(--text-muted)"; }}>
                   ← Bài trước
                 </Link>
               )}
               <Link href="/bai-tap"
-                style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.72rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--text-muted)", border: "1px solid var(--border-strong)", padding: "0.75rem 1.5rem", textDecoration: "none", display: "flex", alignItems: "center", gap: "0.5rem", transition: "all 0.2s" }}
+                style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.72rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--text-muted)", border: "1px solid var(--border-strong)", padding: "0.75rem 1.5rem", textDecoration: "none", display: "flex", alignItems: "center", gap: "0.5rem", transition: "all 0.2s", borderRadius: "var(--radius-md)" }}
                 onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "var(--primary)"; (e.currentTarget as HTMLElement).style.color = "var(--primary)"; }}
                 onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "var(--border-strong)"; (e.currentTarget as HTMLElement).style.color = "var(--text-muted)"; }}>
                 ↩ Ra danh sách
@@ -167,7 +167,7 @@ export default function BaiTapDetailPage({ params }: { params: Promise<{ id: str
             </div>
           ) : (
             <Link href="/bai-tap"
-              style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.72rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--text-muted)", border: "1px solid var(--border-strong)", padding: "0.75rem 1.5rem", textDecoration: "none", display: "flex", alignItems: "center", gap: "0.5rem", transition: "all 0.2s" }}
+              style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.72rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--text-muted)", border: "1px solid var(--border-strong)", padding: "0.75rem 1.5rem", textDecoration: "none", display: "flex", alignItems: "center", gap: "0.5rem", transition: "all 0.2s", borderRadius: "var(--radius-md)" }}
               onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "var(--primary)"; (e.currentTarget as HTMLElement).style.color = "var(--primary)"; }}
               onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "var(--border-strong)"; (e.currentTarget as HTMLElement).style.color = "var(--text-muted)"; }}>
               ← Danh sách
@@ -185,7 +185,7 @@ export default function BaiTapDetailPage({ params }: { params: Promise<{ id: str
           {/* Right: Next */}
           {!isLast && next && (
             <Link href={`/bai-tap/${next.id}`}
-              style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.72rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--on-primary)", background: "var(--primary)", padding: "0.75rem 1.5rem", textDecoration: "none", display: "flex", alignItems: "center", gap: "0.5rem", transition: "background 0.2s" }}
+              style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.72rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--on-primary)", background: "var(--primary)", padding: "0.75rem 1.5rem", textDecoration: "none", display: "flex", alignItems: "center", gap: "0.5rem", transition: "background 0.2s", borderRadius: "var(--radius-md)" }}
               onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "var(--primary-light)"; }}
               onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "var(--primary)"; }}>
               Bài tiếp theo →

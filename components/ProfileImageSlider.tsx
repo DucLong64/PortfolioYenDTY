@@ -15,7 +15,7 @@ const PHOTOS = [
 ];
 
 const INTERVAL_MS = 5000;
-const SLIDE_MS = 700;
+const FADE_MS = 1200;
 
 export default function ProfileImageSlider() {
   const [index, setIndex] = useState(0);
@@ -29,39 +29,22 @@ export default function ProfileImageSlider() {
 
   return (
     <div className="profile-slider" aria-label="Ảnh cá nhân">
-      <div
-        className="profile-slider-track"
-        style={{ transform: `translateX(-${index * 100}%)` }}
-      >
-        {PHOTOS.map((photo, i) => (
-          <div
-            key={photo.src}
-            className="profile-slider-slide"
-            aria-hidden={i !== index}
-          >
-            <Image
-              src={photo.src}
-              alt={photo.alt}
-              fill
-              sizes="(max-width: 768px) 100vw, 420px"
-              style={{ objectFit: "cover" }}
-              priority={i === 0}
-            />
-          </div>
-        ))}
-      </div>
-
-      <div className="profile-slider-dots" aria-hidden="true">
-        {PHOTOS.map((_, i) => (
-          <button
-            key={i}
-            type="button"
-            className={`profile-slider-dot${i === index ? " active" : ""}`}
-            onClick={() => setIndex(i)}
-            aria-label={`Ảnh ${i + 1}`}
+      {PHOTOS.map((photo, i) => (
+        <div
+          key={photo.src}
+          className={`profile-slider-slide${i === index ? " is-active" : ""}`}
+          aria-hidden={i !== index}
+        >
+          <Image
+            src={photo.src}
+            alt={photo.alt}
+            fill
+            sizes="(max-width: 768px) 100vw, 420px"
+            style={{ objectFit: "cover" }}
+            priority={i === 0}
           />
-        ))}
-      </div>
+        </div>
+      ))}
 
       <style>{`
         .profile-slider {
@@ -70,7 +53,7 @@ export default function ProfileImageSlider() {
           max-width: 420px;
           aspect-ratio: 3 / 4;
           overflow: hidden;
-          border-radius: 4px;
+          border-radius: var(--radius-lg);
           box-shadow: 0 24px 48px rgba(0, 77, 138, 0.12);
           border: 1px solid var(--border);
           background: var(--surface2);
@@ -88,48 +71,24 @@ export default function ProfileImageSlider() {
             rgba(0, 166, 81, 0.06) 100%
           );
         }
-        .profile-slider-track {
-          display: flex;
-          width: 100%;
-          height: 100%;
-          transition: transform ${SLIDE_MS}ms cubic-bezier(0.4, 0, 0.2, 1);
-          will-change: transform;
-        }
         .profile-slider-slide {
-          position: relative;
-          flex: 0 0 100%;
-          width: 100%;
-          height: 100%;
-        }
-        .profile-slider-dots {
           position: absolute;
-          bottom: 1rem;
-          left: 50%;
-          transform: translateX(-50%);
-          display: flex;
-          gap: 0.5rem;
-          z-index: 3;
-        }
-        .profile-slider-dot {
-          width: 8px;
-          height: 8px;
-          padding: 0;
-          border: none;
-          border-radius: 50%;
-          cursor: pointer;
-          background: rgba(255, 255, 255, 0.45);
+          inset: 0;
+          opacity: 0;
+          z-index: 0;
+          transform: scale(1.015);
           transition:
-            background 0.35s ease,
-            transform 0.35s ease,
-            width 0.35s ease;
+            opacity ${FADE_MS}ms cubic-bezier(0.4, 0, 0.2, 1),
+            transform ${FADE_MS}ms cubic-bezier(0.4, 0, 0.2, 1);
+          will-change: opacity, transform;
         }
-        .profile-slider-dot.active {
-          width: 22px;
-          border-radius: 4px;
-          background: var(--primary);
+        .profile-slider-slide.is-active {
+          opacity: 1;
+          z-index: 1;
+          transform: scale(1);
         }
         @media (prefers-reduced-motion: reduce) {
-          .profile-slider-track {
+          .profile-slider-slide {
             transition: none;
           }
         }

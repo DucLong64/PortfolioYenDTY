@@ -174,10 +174,11 @@ export default function Navbar() {
           font-size: 0.78rem;
           letter-spacing: 0.12em;
           text-transform: uppercase;
+          font-weight: 600;
           color: var(--text-muted);
           text-decoration: none;
           padding: 0.55rem 1rem;
-          border-radius: 2px;
+          border-radius: var(--radius-md);
           transition: background-color 0.2s ease, color 0.2s ease;
         }
         .nav-link:hover,
@@ -193,7 +194,9 @@ export default function Navbar() {
           display: block;
           font-size: 0.85rem;
           letter-spacing: 0.1em;
+          font-weight: 600;
           padding: 0.75rem 1rem;
+          border-radius: var(--radius-md);
         }
         @media (max-width: 768px) {
           .hidden-mobile { display: none !important; }

@@ -24,6 +24,9 @@
   --on-primary: #ffffff;
   --nav-bg: rgba(255, 255, 255, 0.22);
   --shadow: 0 4px 24px rgba(0, 77, 138, 0.08);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }

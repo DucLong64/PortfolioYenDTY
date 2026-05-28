@@ -24,6 +24,7 @@ export default function AssignmentSections({ sections }: AssignmentSectionsProps
                 padding: "1.5rem 2rem",
                 borderBottom: "1px solid var(--border)",
                 background: "var(--surface2)",
+                borderRadius: "var(--radius-md) var(--radius-md) 0 0",
               }}
             >
               <div
@@ -75,6 +76,7 @@ export default function AssignmentSections({ sections }: AssignmentSectionsProps
                       textAlign: "left",
                       transition: "background 0.2s",
                       backgroundColor: isOpen ? "var(--surface2)" : "transparent",
+                      borderRadius: "var(--radius-sm)",
                     }}
                     onMouseEnter={(e) => {
                       if (!isOpen)
@@ -161,6 +163,7 @@ export default function AssignmentSections({ sections }: AssignmentSectionsProps
                         background: "var(--surface2)",
                         maxHeight: "520px",
                         overflowY: "auto",
+                        borderRadius: "0 0 var(--radius-md) var(--radius-md)",
                       }}
                     >
                       <p
@@ -199,6 +202,7 @@ export default function AssignmentSections({ sections }: AssignmentSectionsProps
                 textAlign: "left",
                 transition: "background 0.2s",
                 backgroundColor: openSection === i ? "var(--surface2)" : "transparent",
+                borderRadius: "var(--radius-sm)",
               }}
               onMouseEnter={(e) => {
                 if (openSection !== i)
@@ -258,6 +262,7 @@ export default function AssignmentSections({ sections }: AssignmentSectionsProps
                   borderTop: "1px solid var(--border)",
                   paddingTop: "1.2rem",
                   background: "var(--surface2)",
+                borderRadius: "0 0 var(--radius-md) var(--radius-md)",
                 }}
               >
                 <p

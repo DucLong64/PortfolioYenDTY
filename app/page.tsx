@@ -6,42 +6,42 @@ import ProfileImageSlider from "@/components/ProfileImageSlider";
 const directions = [
   {
     num: "01",
-    title: "Ứng dụng AI trong Răng Hàm Mặt",
-    desc: "Nghiên cứu công cụ AI tạo sinh và AI trong chẩn đoán hình ảnh nha khoa, hỗ trợ quy trình điều trị an toàn và hiệu quả.",
+    title: "Trí tuệ nhân tạo gắn với chuyên ngành RHM",
+    desc: "Tìm hiểu ứng dụng AI tạo sinh và hỗ trợ đọc phim chụp trong nha khoa, luôn đặt an toàn lâm sàng lên hàng đầu khi áp dụng.",
   },
   {
     num: "02",
-    title: "Phát triển toàn diện",
-    desc: "Song hành kỹ năng số cùng năng lực lâm sàng thực tế — hướng tới bác sĩ RHM thời đại số.",
+    title: "Năng lực kép: số hóa & thực hành",
+    desc: "Rèn luyện đồng thời kỹ năng công nghệ và thao tác lâm sàng, hướng tới mô hình bác sĩ RHM am hiểu công cụ số.",
   },
   {
     num: "03",
-    title: "Triết lý hành nghề",
-    desc: "Đề cao sự minh bạch, liêm chính học thuật. Tư duy lâm sàng là nền tảng cốt lõi, công nghệ là công cụ hỗ trợ đắc lực.",
+    title: "Đạo đức & tư duy nghề nghiệp",
+    desc: "Coi trọng trung thực trong học tập và nghiên cứu; kiến thức lâm sàng là gốc, công nghệ chỉ hỗ trợ khi đã được kiểm chứng.",
   },
   {
     num: "04",
-    title: "Giá trị thực tiễn trong điều trị",
-    desc: "Kết hợp kiến thức y khoa truyền thống với giải pháp công nghệ tiên tiến nhằm tối ưu hóa giá trị thực tiễn cho người bệnh.",
+    title: "Hướng tới lợi ích người bệnh",
+    desc: "Mong muốn gắn kết nền tảng y khoa cổ điển với công nghệ hiện đại để nâng cao chất lượng và hiệu quả điều trị thực tế.",
   },
 ];
 
 const focusAreas = [
   {
-    cat: "Chuyên môn",
-    items: ["Răng Hàm Mặt", "Chẩn đoán hình ảnh", "Thực hành lâm sàng", "Giải phẫu nha khoa"],
+    cat: "Nền tảng chuyên môn",
+    items: ["Răng – Hàm – Mặt", "Chụp & đọc phim", "Thao tác ghế điều trị", "Mô phỏng giải phẫu"],
   },
   {
-    cat: "Công nghệ & AI",
-    items: ["AI trong y tế", "AI tạo sinh", "Prompt Engineering", "Công cụ hợp tác số"],
+    cat: "Kỹ năng số",
+    items: ["AI trong chăm sóc sức khỏe", "AI tạo sinh", "Kỹ thuật prompt", "Cộng tác trực tuyến"],
   },
   {
-    cat: "Học thuật",
-    items: ["Tìm kiếm tài liệu", "Đánh giá nguồn tin", "Trích dẫn chuẩn", "Liêm chính học thuật"],
+    cat: "Năng lực học thuật",
+    items: ["Tìm bằng chứng y văn", "Thẩm định nguồn", "Ghi chép tham khảo", "Liêm chính khoa học"],
   },
   {
-    cat: "Giá trị cốt lõi",
-    items: ["Tư duy lâm sàng", "An toàn bệnh nhân", "Minh bạch", "Học đi đôi với hành"],
+    cat: "Kim chỉ nam",
+    items: ["Tư duy quyết định lâm sàng", "An toàn người bệnh", "Trách nhiệm nghề", "Học – hành – rút kinh nghiệm"],
   },
 ];
 
@@ -75,7 +75,7 @@ export default function HomePage() {
           overflow: "hidden",
           paddingTop: "72px",
           backgroundImage:
-            "radial-gradient(ellipse 85% 70% at 85% 20%, rgba(0, 166, 81, 0.07) 0%, transparent 55%), radial-gradient(ellipse 60% 50% at 10% 80%, rgba(0, 102, 179, 0.09) 0%, transparent 50%), linear-gradient(165deg, #ffffff 0%, #f6fafc 45%, #eef4f8 100%)",
+            "radial-gradient(ellipse 90% 74% at 88% 18%, rgba(0, 166, 81, 0.18) 0%, rgba(0, 166, 81, 0.1) 32%, transparent 62%), radial-gradient(ellipse 68% 56% at 12% 82%, rgba(0, 102, 179, 0.22) 0%, rgba(0, 102, 179, 0.12) 36%, transparent 64%), linear-gradient(165deg, #fdfefe 0%, #eef6fc 48%, #e1edf7 100%)",
         }}
       >
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "4rem 2rem", width: "100%" }} className="hero-grid">
@@ -91,15 +91,15 @@ export default function HomePage() {
             </h1>
             <p style={{ fontFamily: "'Source Sans 3', serif", fontSize: "1.25rem", color: "var(--text-muted)", maxWidth: "620px", lineHeight: 1.8, marginBottom: "3rem" }}>
               <strong style={{ color: "var(--text)" }}>Đặng Thị Yến Vy</strong> · Sinh viên năm 4 ngành{" "}
-              <strong style={{ color: "var(--text)" }}>Răng Hàm Mặt</strong> tại Trường Đại học Y Dược — ĐHQGHN. Tôi định hướng trở thành bác sĩ RHM thời đại số, kết hợp{" "}
-              <span style={{ color: "var(--primary)" }}>y khoa truyền thống</span> với{" "}
-              <span style={{ color: "var(--primary)" }}>công nghệ tiên tiến</span> để tối ưu giá trị thực tiễn trong điều trị.
+              <strong style={{ color: "var(--text)" }}>Răng Hàm Mặt</strong> tại Trường Đại học Y Dược — ĐHQGHN. Tôi theo đuổi hình mẫu bác sĩ RHM thời đại số, kết nối{" "}
+              <span style={{ color: "var(--primary)" }}>nền tảng y khoa chuẩn mực</span> với{" "}
+              <span style={{ color: "var(--primary)" }}>giải pháp công nghệ ứng dụng</span> để nâng cao hiệu quả chăm sóc người bệnh.
             </p>
             <div style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap" }}>
-              <Link href="/bai-tap" style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.8rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--on-primary)", background: "var(--primary)", padding: "0.9rem 2rem", textDecoration: "none", display: "inline-block", borderRadius: "2px" }}>
+              <Link href="/bai-tap" style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.8rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--on-primary)", background: "var(--primary)", padding: "0.9rem 2rem", textDecoration: "none", display: "inline-block", borderRadius: "var(--radius-md)" }}>
                 Xem Bài Tập →
               </Link>
-              <a href="#lien-he" style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.8rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--text-muted)", background: "transparent", padding: "0.9rem 2rem", textDecoration: "none", border: "1px solid var(--border-strong)", display: "inline-block" }}>
+              <a href="#lien-he" style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.8rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--text-muted)", background: "transparent", padding: "0.9rem 2rem", textDecoration: "none", border: "1px solid var(--border-strong)", display: "inline-block", borderRadius: "var(--radius-md)" }}>
                 Liên Hệ
               </a>
             </div>
@@ -113,23 +113,9 @@ export default function HomePage() {
       <div style={{ borderTop: "1px solid var(--border)", margin: "0 2rem" }} />
 
       {/* About */}
-      <section style={{ maxWidth: 1200, margin: "0 auto", padding: "6rem 2rem", display: "grid", gridTemplateColumns: "1fr 1.5fr", gap: "5rem", alignItems: "start" }} className="about-grid">
+      <section style={{ maxWidth: 1200, margin: "0 auto", padding: "6rem 2rem", display: "grid", gridTemplateColumns: "1.5fr 1fr", gap: "5rem", alignItems: "start" }} className="about-grid">
         <div>
-          <div style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--primary)", marginBottom: "2rem", display: "flex", alignItems: "center", gap: "1rem" }}>
-            <span style={{ width: 24, height: 1, background: "var(--primary)", display: "inline-block" }} />
-            Thông tin
-          </div>
-          <div style={{ display: "flex", flexDirection: "column" }}>
-            {[["Họ tên","Đặng Thị Yến Vy"],["Vai trò","Sinh viên năm 4 — RHM"],["Trường","ĐH Y Dược — ĐHQGHN (UMP-VNU)"],["Chuyên ngành","Răng Hàm Mặt"],["Lớp","VNU1001_E2025"],["MSV","22100381"],["Thời gian","2022 — 2028"]].map(([label,value],i) => (
-              <div key={i} style={{ display: "flex", borderBottom: "1px solid var(--border)", padding: "1rem 0" }}>
-                <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.72rem", letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--text-dim)", width: "40%", flexShrink: 0 }}>{label}</span>
-                <span style={{ fontFamily: "'Source Sans 3', serif", fontSize: "1rem", color: "var(--text)" }}>{value}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div>
-          <div style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--primary)", marginBottom: "2rem", display: "flex", alignItems: "center", gap: "1rem" }}>
+          <div style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.82rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--primary)", marginBottom: "2rem", display: "flex", alignItems: "center", gap: "1rem" }}>
             <span style={{ width: 24, height: 1, background: "var(--primary)", display: "inline-block" }} />
             Về tôi
           </div>
@@ -137,14 +123,28 @@ export default function HomePage() {
             Tư duy lâm sàng là cốt lõi, <em style={{ color: "var(--green)" }}>công nghệ là đòn bẩy</em>
           </h2>
           <p style={{ fontFamily: "'Source Sans 3', serif", fontSize: "1.1rem", color: "var(--text-muted)", lineHeight: 1.9, marginBottom: "1.5rem" }}>
-            Tôi là Đặng Thị Yến Vy, sinh viên ngành Răng Hàm Mặt tại Trường Đại học Y Dược, Đại học Quốc gia Hà Nội. Tôi định hướng trở một bác sĩ răng hàm mặt thời đại số, không ngừng kết hợp kiến thức y khoa truyền thống với các giải pháp công nghệ tiên tiến nhằm tối ưu hóa giá trị thực tiễn trong điều trị.
+            Tôi là Đặng Thị Yến Vy, sinh viên ngành Răng Hàm Mặt tại Trường Đại học Y Dược, Đại học Quốc gia Hà Nội. Mục tiêu của tôi là trở thành bác sĩ RHM thời đại số, biết cách vận dụng tri thức y khoa nền tảng cùng công nghệ hiện đại để tạo giá trị điều trị bền vững.
           </p>
           <p style={{ fontFamily: "'Source Sans 3', serif", fontSize: "1.1rem", color: "var(--text-muted)", lineHeight: 1.9, marginBottom: "1.5rem" }}>
-            Lĩnh vực quan tâm gồm ứng dụng AI trong Răng Hàm Mặt — nghiên cứu công cụ AI tạo sinh và AI trong chẩn đoán hình ảnh nha khoa — cùng mục tiêu phát triển toàn diện: song hành kỹ năng số và năng lực lâm sàng thực tế.
+            Tôi đặc biệt quan tâm đến ứng dụng AI trong Răng Hàm Mặt, từ công cụ AI tạo sinh đến hỗ trợ chẩn đoán hình ảnh nha khoa. Song song đó là định hướng phát triển toàn diện: đi cùng nhau giữa năng lực số, tư duy phản biện và kỹ năng lâm sàng thực hành.
           </p>
           <p style={{ fontFamily: "'Source Sans 3', serif", fontSize: "1.1rem", color: "var(--text-muted)", lineHeight: 1.9 }}>
-            Triết lý hành nghề của tôi đề cao sự minh bạch, liêm chính học thuật. Tôi khẳng định tư duy lâm sàng là nền tảng cốt lõi, còn công nghệ là công cụ hỗ trợ đắc lực trong hành trình chăm sóc sức khỏe.
+            Triết lý nghề nghiệp của tôi đặt trọng tâm vào minh bạch và liêm chính học thuật. Với tôi, tư duy lâm sàng luôn là cốt lõi, còn công nghệ là đòn bẩy để phục vụ quyết định điều trị chính xác và nhân văn hơn.
           </p>
+        </div>
+        <div>
+          <div style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.82rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--primary)", marginBottom: "2rem", display: "flex", alignItems: "center", gap: "1rem" }}>
+            <span style={{ width: 24, height: 1, background: "var(--primary)", display: "inline-block" }} />
+            Thông tin
+          </div>
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            {[["Họ tên","Đặng Thị Yến Vy"],["Vai trò","Sinh viên năm 4 — RHM"],["Trường","ĐH Y Dược — ĐHQGHN (UMP-VNU)"],["Chuyên ngành","Răng Hàm Mặt"],["Lớp","VNU1001_E2025"],["MSV","22100381"],["Thời gian","2022 — 2028"]].map(([label,value],i) => (
+              <div key={i} style={{ display: "flex", borderBottom: "1px solid var(--border)", padding: "1rem 0" }}>
+                <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.72rem", letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--text-dim)", width: "40%", flexShrink: 0, fontWeight: 700 }}>{label}</span>
+                <span style={{ fontFamily: "'Source Sans 3', serif", fontSize: "1rem", color: "var(--text)", fontWeight: 600 }}>{value}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -152,7 +152,7 @@ export default function HomePage() {
 
       {/* Skills */}
       <section id="ky-nang" style={{ maxWidth: 1200, margin: "0 auto", padding: "6rem 2rem" }}>
-        <div style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--primary)", marginBottom: "1rem", display: "flex", alignItems: "center", gap: "1rem" }}>
+        <div style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.82rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--primary)", marginBottom: "1rem", display: "flex", alignItems: "center", gap: "1rem" }}>
           <span style={{ width: 24, height: 1, background: "var(--primary)", display: "inline-block" }} />
           Học tập &amp; Kỹ năng
         </div>
@@ -161,7 +161,7 @@ export default function HomePage() {
         </h2>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "1px", background: "var(--border)", marginBottom: "4rem" }} className="direction-grid">
           {directions.map((d) => (
-            <div key={d.num} style={{ background: "var(--surface)", padding: "2.5rem", transition: "background 0.3s" }}
+            <div key={d.num} style={{ background: "var(--surface)", padding: "2.5rem", transition: "background 0.3s", borderRadius: "var(--radius-lg)" }}
               onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "var(--surface2)"; }}
               onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "var(--surface)"; }}>
               <div style={{ fontFamily: "'DM Mono', monospace", fontSize: "2.5rem", fontWeight: 300, color: "var(--border-strong)", marginBottom: "1rem", lineHeight: 1 }}>{d.num}</div>
@@ -192,7 +192,7 @@ export default function HomePage() {
 
       {/* Contact */}
       <section id="lien-he" style={{ maxWidth: 1200, margin: "0 auto", padding: "6rem 2rem" }}>
-        <div style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.7rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--primary)", marginBottom: "2rem", display: "flex", alignItems: "center", gap: "1rem" }}>
+        <div style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.82rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--primary)", marginBottom: "2rem", display: "flex", alignItems: "center", gap: "1rem" }}>
           <span style={{ width: 24, height: 1, background: "var(--primary)", display: "inline-block" }} />
           Liên hệ
         </div>
@@ -202,7 +202,7 @@ export default function HomePage() {
               Hãy kết nối<br /><em style={{ color: "var(--green)" }}>cùng tôi</em>
             </h2>
             <p style={{ fontFamily: "'Source Sans 3', serif", fontSize: "1.1rem", color: "var(--text-dim)", lineHeight: 1.8 }}>
-              Tôi luôn sẵn sàng trao đổi về ứng dụng AI trong y tế, nghiên cứu RHM, cơ hội học tập hoặc hợp tác trong các dự án liên quan đến chăm sóc sức khỏe.
+              Tôi luôn sẵn sàng kết nối để trao đổi về ứng dụng AI trong Răng Hàm Mặt, học thuật y khoa, cũng như các cơ hội học tập và hợp tác chuyên môn liên quan đến chăm sóc sức khỏe.
             </p>
           </div>
           <div style={{ display: "flex", flexDirection: "column" }}>
@@ -211,9 +211,9 @@ export default function HomePage() {
               { label: "Email", value: "yenvy2801@gmail.com", href: "mailto:yenvy2801@gmail.com" },
               { label: "Facebook", value: "Đặng Yến Vy", href: "https://www.facebook.com/yen.vy.xinhiuu.12" },
             ].map(({ label, value, href }) => (
-              <a key={label} href={href} style={{ display: "flex", borderBottom: "1px solid var(--border)", padding: "1.2rem 0", textDecoration: "none", transition: "all 0.2s", alignItems: "center" }}
+              <a key={label} href={href} style={{ display: "flex", borderBottom: "1px solid var(--border)", padding: "1.2rem 0.8rem", textDecoration: "none", transition: "all 0.2s", alignItems: "center", borderRadius: "var(--radius-md)" }}
                 onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.paddingLeft = "0.5rem"; (e.currentTarget.querySelector(".val") as HTMLElement).style.color = "var(--primary)"; }}
-                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.paddingLeft = "0"; (e.currentTarget.querySelector(".val") as HTMLElement).style.color = "var(--text-muted)"; }}>
+                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.paddingLeft = "0.8rem"; (e.currentTarget.querySelector(".val") as HTMLElement).style.color = "var(--text-muted)"; }}>
                 <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.65rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--text-dim)", width: "35%", flexShrink: 0 }}>{label}</span>
                 <span className="val" style={{ fontFamily: "'Source Sans 3', serif", fontSize: "1rem", color: "var(--text-muted)", transition: "color 0.2s" }}>{value}</span>
               </a>
